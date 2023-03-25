@@ -11,4 +11,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="product_title">Product</string>
     <string name="profile">profile</string>
+    <string name="sub_header">Subheader</string>
+    <string name="header">Header</string>
+    <string name="todo">TODO</string>
 </resources>
