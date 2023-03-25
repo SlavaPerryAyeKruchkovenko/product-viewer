@@ -18,4 +18,10 @@
     <string name="enabled">Enabled</string>
     <string name="subhead">Subhead</string>
     <string name="title">Title</string>
+    <string name="id_btn">Кнопка с текстом Id</string>
+    <string name="share">Поделиться</string>
+    <string name="like">Лайк</string>
+    <string name="change_card_color">Меняет цвет фона карточки выше при переключении</string>
+    <string name="fish2">А это текст полный смысла и очень большой, наверное тут должно быть описание сказочного персонажа или ещё кого-то, вообщем смысл простой - длинный текст, а ещё он не доходит до конца экрана, это фича =)</string>
+    <string name="title2">Это заголовок</string>
 </resources>
