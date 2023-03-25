@@ -14,4 +14,8 @@
     <string name="sub_header">Subheader</string>
     <string name="header">Header</string>
     <string name="todo">TODO</string>
+    <string name="fish">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</string>
+    <string name="enabled">Enabled</string>
+    <string name="subhead">Subhead</string>
+    <string name="title">Title</string>
 </resources>
