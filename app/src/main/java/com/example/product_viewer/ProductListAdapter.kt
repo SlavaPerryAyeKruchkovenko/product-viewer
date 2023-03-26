@@ -42,12 +42,11 @@ class ProductListAdapter(val listener: Listener) : ListAdapter<Product, Recycler
         }
     }
 
-
     class ProductHolderExpand(private val binding: ProductItemExpandBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(product: Product, listener: Listener) = with(binding) {
-            /*itemView.setOnClickListener{
+            itemView.setOnClickListener{
                 listener.onClick(product)
-            }*/
+            }
             productImage.setImageResource(product.imageId)
             cardTitle.text=product.titleText
             cardSubHeader.text=product.titleSubHeadText
@@ -60,6 +59,9 @@ class ProductListAdapter(val listener: Listener) : ListAdapter<Product, Recycler
 
     class ProductHolderCollapsed(private val binding: ProductItemCollapsedBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(product: Product, listener: Listener) = with(binding) {
+            itemView.setOnClickListener{
+                listener.onClick(product)
+            }
             avatar.setImageResource(product.avatarId)
             header.text = product.headerText
             subHeader.text = product.subheadText
@@ -80,6 +82,6 @@ class ProductListAdapter(val listener: Listener) : ListAdapter<Product, Recycler
     }
 
     interface Listener{
-        fun onClick(news: Product)
+        fun onClick(product: Product)
     }
 }

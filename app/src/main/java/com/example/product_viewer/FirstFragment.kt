@@ -16,7 +16,7 @@ class FirstFragment : Fragment(), ProductListAdapter.Listener {
 
     private var _binding: FragmentFirstBinding? = null
     private val newsAdapter = ProductListAdapter(this)
-    private val apiManager = Mock()
+    private val apiManager:DataManager = Mock()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,7 +25,7 @@ class FirstFragment : Fragment(), ProductListAdapter.Listener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         init()
         return binding.root
@@ -49,7 +49,11 @@ class FirstFragment : Fragment(), ProductListAdapter.Listener {
         _binding = null
     }
 
-    override fun onClick(news: Product) {
-        TODO("Not yet implemented")
+    override fun onClick(product: Product) {
+        val bundle = Bundle()
+        bundle.apply {
+            putString("product_id",product.id)
+        }
+        findNavController().navigate(R.id.action_FirstFragment_to_secondFragment)
     }
 }
