@@ -1,6 +1,7 @@
 package com.example.product_viewer
 
 data class Product (
+    val id: String,
     val viewType :Int,
     val avatarId : Int,
     val headerText: String,

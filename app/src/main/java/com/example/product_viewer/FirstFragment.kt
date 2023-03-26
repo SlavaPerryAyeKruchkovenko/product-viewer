@@ -16,6 +16,7 @@ class FirstFragment : Fragment(), ProductListAdapter.Listener {
 
     private var _binding: FragmentFirstBinding? = null
     private val newsAdapter = ProductListAdapter(this)
+    private val apiManager = Mock()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -34,27 +35,8 @@ class FirstFragment : Fragment(), ProductListAdapter.Listener {
         super.onViewCreated(view, savedInstanceState)
     }
     private fun init(){
-        val list  = listOf(
-            Product(
-                0,R.drawable.avatar,"Header",
-                "Subhead", "Title", "Subhead",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-                R.drawable.media,R.drawable.media_low
-            ),
-            Product(
-                1,R.drawable.avatar,"Header",
-                "Subhead", "Title", "Subhead",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-                R.drawable.media,R.drawable.media_low
-            ),
-            Product(
-                0,R.drawable.avatar,"Header",
-                "Subhead", "Title", "Subhead",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-                R.drawable.media,R.drawable.media_low
-            ),
-        )
-        newsAdapter.submitList(list)
+        val products = apiManager.getProducts()
+        newsAdapter.submitList(products)
         binding.elements.layoutManager = LinearLayoutManager(context,
             LinearLayoutManager.VERTICAL,false)
         binding.elements.adapter = newsAdapter
