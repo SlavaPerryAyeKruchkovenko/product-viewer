@@ -32,6 +32,8 @@
         android:id="@+id/card_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
         android:src="@drawable/media"
         app:layout_constraintTop_toBottomOf="@+id/product_appbar"
         app:layout_constraintStart_toStartOf="parent"
