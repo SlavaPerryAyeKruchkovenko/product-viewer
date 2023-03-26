@@ -39,5 +39,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/default_appbar"
         tools:listitem="@layout/product_item_collapsed"
-        android:paddingBottom="64dp"/>
+        android:paddingBottom="?attr/actionBarSize"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
