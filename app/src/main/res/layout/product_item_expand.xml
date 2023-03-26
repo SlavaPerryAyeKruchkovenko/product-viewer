@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="21dp"
+    android:layout_marginTop="@dimen/up_padding_2"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout
         android:orientation="vertical"
@@ -27,7 +27,7 @@
             android:id="@+id/text_content_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:padding="@dimen/fab_margin"
             >
 
             <TextView
@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:textSize="16sp"
+                android:textSize="@dimen/default_font"
                 android:text="@string/title"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
@@ -44,7 +44,7 @@
                 android:id="@+id/card_sub_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:textSize="@dimen/low_font"
                 android:text="@string/subhead"
                 app:layout_constraintTop_toBottomOf="@+id/card_title"
                 app:layout_constraintStart_toStartOf="parent"/>
@@ -53,8 +53,8 @@
                 android:id="@+id/card_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:layout_marginTop="32dp"
+                android:textSize="@dimen/low_font"
+                android:layout_marginTop="@dimen/max_fab_margin"
                 android:text="@string/fish"
                 app:layout_constraintTop_toBottomOf="@+id/card_sub_header"
                 />
@@ -64,7 +64,7 @@
                 android:id="@+id/enable_btn1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="@dimen/max_fab_margin"
                 android:text="@string/enabled"
                 app:layout_constraintTop_toBottomOf="@+id/card_description"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -73,8 +73,8 @@
                 android:id="@+id/enable_btn2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginTop="@dimen/max_fab_margin"
+                android:layout_marginEnd="@dimen/html_default_margin"
                 style="?attr/materialButtonOutlinedStyle"
                 android:text="@string/enabled"
                 app:layout_constraintTop_toBottomOf="@+id/card_description"

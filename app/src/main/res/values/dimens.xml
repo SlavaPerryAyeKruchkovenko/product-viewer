@@ -1,3 +1,15 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="low_padding">12dp</dimen>
+    <dimen name="default_font">16sp</dimen>
+    <dimen name="text_max_width">250dp</dimen>
+    <dimen name="medium_padding">24dp</dimen>
+    <dimen name="max_btn_height">40dp</dimen>
+    <dimen name="low_font">14sp</dimen>
+    <dimen name="up_padding_1">22dp</dimen>
+    <dimen name="up_padding_2">21dp</dimen>
+    <dimen name="text_low_margin">4dp</dimen>
+    <dimen name="low_image_size">80dp</dimen>
+    <dimen name="max_fab_margin">32dp</dimen>
+    <dimen name="html_default_margin">8dp</dimen>
 </resources>

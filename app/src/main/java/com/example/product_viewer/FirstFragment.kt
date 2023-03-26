@@ -40,9 +40,6 @@ class FirstFragment : Fragment(), ProductListAdapter.Listener {
         binding.elements.layoutManager = LinearLayoutManager(context,
             LinearLayoutManager.VERTICAL,false)
         binding.elements.adapter = newsAdapter
-        /*binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-        }*/
     }
     override fun onDestroyView() {
         super.onDestroyView()
@@ -54,6 +51,6 @@ class FirstFragment : Fragment(), ProductListAdapter.Listener {
         bundle.apply {
             putString("product_id",product.id)
         }
-        findNavController().navigate(R.id.action_FirstFragment_to_secondFragment)
+        findNavController().navigate(R.id.action_FirstFragment_to_secondFragment,bundle)
     }
 }

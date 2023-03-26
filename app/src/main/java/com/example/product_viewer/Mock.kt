@@ -2,26 +2,33 @@ package com.example.product_viewer
 
 class Mock : DataManager  {
     private val products = listOf(
-        Product(
-            "1",
-            0,R.drawable.avatar,"Header",
-            "Subhead", "Title", "Subhead",
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-            R.drawable.media,R.drawable.media_low
+        Product.CollapsedProduct(
+            R.drawable.avatar,"Header",
+            "Subhead", R.drawable.media_low,"1",
+            0,R.drawable.media,"Title"
         ),
-        Product(
-            "2",
-            1,R.drawable.avatar,"Header",
-            "Subhead", "Title", "Subhead",
+        Product.ExpandProduct(
+            R.drawable.avatar,"Subhead",
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-            R.drawable.media,R.drawable.media_low
+            "Header",
+            "Subhead", "2",1,R.drawable.media,"Title"
         ),
-        Product(
-            "3",
-            0,R.drawable.avatar,"Header",
-            "Subhead", "Title", "Subhead",
+        Product.CollapsedProduct(
+            R.drawable.avatar,"Header",
+            "Subhead", R.drawable.media_low,"3",
+            0,R.drawable.media,"Title"
+        ),
+        Product.ExpandProduct(
+            R.drawable.avatar,"Subhead",
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-            R.drawable.media,R.drawable.media_low
+            "Header",
+            "Subhead", "2",1,R.drawable.media,"Title"
+        ),
+        Product.ExpandProduct(
+            R.drawable.avatar,"Subhead",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+            "Header",
+            "Subhead", "2",1,R.drawable.media,"Title"
         ),
     )
     public override fun getProducts(): List<Product> {

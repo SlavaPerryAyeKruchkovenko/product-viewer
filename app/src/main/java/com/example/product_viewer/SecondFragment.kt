@@ -1,6 +1,7 @@
 package com.example.product_viewer
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -20,6 +21,7 @@ class SecondFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    private val dataManager = Mock()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,9 +40,19 @@ class SecondFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+        this._binding = null
     }
     private fun init(){
+        if(arguments != null){
+            val id =  this.arguments?.getString("product_id")
+            val product = id?.let { dataManager.getProduct(it) }
+
+            if(product != null){
+                binding.cardIdBtn.text = id
+                binding.cardImage.setImageResource(product.imageId)
+                binding.productToolbar.title = product.titleText
+            }
+        }
         binding.productToolbar.setNavigationOnClickListener { findNavController().popBackStack() }
         binding.switchColor.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { _, isChecked ->
             if (isChecked) {

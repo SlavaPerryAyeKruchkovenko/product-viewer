@@ -36,14 +36,14 @@ class ProductListAdapter(val listener: Listener) : ListAdapter<Product, Recycler
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder.itemViewType) {
-            0 -> (holder as ProductHolderCollapsed).bind(getItem(position), listener)
-            else -> (holder as ProductHolderExpand).bind(getItem(position), listener)
+            0 -> (holder as ProductHolderCollapsed).bind(getItem(position) as Product.CollapsedProduct, listener)
+            else -> (holder as ProductHolderExpand).bind(getItem(position) as Product.ExpandProduct, listener)
 
         }
     }
 
     class ProductHolderExpand(private val binding: ProductItemExpandBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(product: Product, listener: Listener) = with(binding) {
+        fun bind(product: Product.ExpandProduct, listener: Listener) = with(binding) {
             itemView.setOnClickListener{
                 listener.onClick(product)
             }
@@ -58,7 +58,7 @@ class ProductListAdapter(val listener: Listener) : ListAdapter<Product, Recycler
     }
 
     class ProductHolderCollapsed(private val binding: ProductItemCollapsedBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(product: Product, listener: Listener) = with(binding) {
+        fun bind(product: Product.CollapsedProduct, listener: Listener) = with(binding) {
             itemView.setOnClickListener{
                 listener.onClick(product)
             }
